@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\BloodPressureObservation;
 use App\Models\Patients;
+use App\Exports\BpoExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BpoController extends Controller
 {
@@ -63,6 +65,11 @@ class BpoController extends Controller
     
         return redirect()->route('bpo.index')
                         ->with('success','Blood pressure observation recorded successfully');
+    }
+
+    public function export() 
+    {
+        return Excel::download(new BpoExport, 'bpo.xlsx');
     }
 
      
