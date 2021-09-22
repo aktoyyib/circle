@@ -6,9 +6,9 @@ use Livewire\Component;
 use App\Models\Patients;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-use Rappasoft\LaravelLivewireTables\TableComponent;
+use Rappasoft\LaravelLivewireTables\DataTableComponent;
 
-class PatientsTable extends TableComponent
+class PatientsTable extends DataTableComponent
 {
 
     public function query() : Builder

@@ -6,9 +6,9 @@ use Livewire\Component;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-use Rappasoft\LaravelLivewireTables\TableComponent;
+use Rappasoft\LaravelLivewireTables\DataTableComponent;
 
-class UsersTable extends TableComponent
+class UsersTable extends DataTableComponent
 {
 
     public function query() : Builder

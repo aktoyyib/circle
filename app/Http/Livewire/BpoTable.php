@@ -6,9 +6,9 @@ use Livewire\Component;
 use App\Models\BloodPressureObservation;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-use Rappasoft\LaravelLivewireTables\TableComponent;
+use Rappasoft\LaravelLivewireTables\DataTableComponent;
 
-class BpoTable extends TableComponent
+class BpoTable extends DataTableComponent
 {
 
     public function query() : Builder
