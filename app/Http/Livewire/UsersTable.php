@@ -21,7 +21,7 @@ class UsersTable extends DataTableComponent
     public function columns() : array
     {
         return [
-            Column::make('ID')
+            Column::make('ID', 'id')
                 ->searchable()
                 ->sortable(),
             Column::make('First Name', 'firstname')
