@@ -21,7 +21,7 @@ class BpoTable extends DataTableComponent
     public function columns() : array
     {
         return [
-            Column::make('ID')
+            Column::make('ID', 'id')
                 ->searchable()
                 ->sortable(),
             Column::make('Patient Name', 'patient.firstname')

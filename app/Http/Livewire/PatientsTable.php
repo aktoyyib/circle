@@ -21,10 +21,10 @@ class PatientsTable extends DataTableComponent
     public function columns() : array
     {
         return [
-            Column::make('ID')
+            Column::make('ID', 'id')
                 ->searchable()
                 ->sortable(),
-            Column::make('Name')
+            Column::make('Name', 'name')
                 ->searchable()
                 ->sortable(),
             Column::make('Gender', 'gender')
