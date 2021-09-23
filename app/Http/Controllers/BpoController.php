@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\BloodPressureObservation;
 use App\Models\Patients;
 use App\Exports\BpoExport;
+use Auth;
 use Maatwebsite\Excel\Facades\Excel;
 
 class BpoController extends Controller
@@ -18,8 +19,10 @@ class BpoController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
         $returns = [
-            'page' =>  'bpo' 
+            'page'  =>  'bpo',
+            'user'  =>  $user,
         ];
 
         return view('bpo.index', $returns);

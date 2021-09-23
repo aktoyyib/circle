@@ -8,6 +8,7 @@ use App\Models\User;
 use Spatie\Permission\Models\Role;
 use DB;
 use Hash;
+use Auth;
 use Illuminate\Support\Arr;
 use App\Exports\UserExport;
 use Maatwebsite\Excel\Facades\Excel;
@@ -21,8 +22,11 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {  
+        $user = Auth::user();
+
         $returns = [
-            'page' =>  'user'
+            'page' =>  'user',
+            'user'  =>  $user,
         ];
 
         return view('users.index', $returns);

@@ -30,6 +30,11 @@ class BpoTable extends DataTableComponent
             Column::make('Observation', 'observation')
                 ->searchable()
                 ->sortable(),
+            Column::make('Created On', 'created_at')
+                ->sortable()
+                ->format(function($value) {
+                    return date('F d, Y', strtotime($value));
+                }),
             // Column::make('Role', 'role.name')
             //     ->searchable()
             //     ->sortable(),

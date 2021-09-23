@@ -18,20 +18,18 @@ use App\Http\Controllers\BpoController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Auth::routes();
 
 
 Route::group(array('middleware' => ['throttle:20|60,1', 'auth']), function(){ 
+    Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home'); 
 
     Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home'); 
     Route::resource('roles', RoleController::class);
-    Route::get('users/export', [UserController::class, 'export']);
+    Route::get('users/export', [UserController::class, 'export'])->middleware('role:Admin');
     Route::resource('users', UserController::class); 
     Route::resource('patients', PatientController::class);
-    Route::get('bpo/export', [BpoController::class, 'export']);
+    Route::get('bpo/export', [BpoController::class, 'export'])->middleware('role:Admin|Doctor');
     Route::resource('bpo', BpoController::class);
 
 }); 
