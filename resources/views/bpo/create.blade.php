@@ -58,16 +58,7 @@
                         <div class="px-4 py-5 bg-white sm:p-6">
                           <div class="grid grid-cols-6 gap-6"> 
 
-                            <div class="col-span-6 sm:col-span-4">
-                              <label for="last-name" class="block text-sm font-medium text-gray-700">Patient</label> 
-                              <select class="w-full border bg-white rounded px-3 py-2 outline-none" name="patient_id">
-                                @isset($patients)
-                                  @foreach($patients as $patient)
-                                  <option class="py-1" value="{{ $patient->id }}">{{ $patient->name }}</option> 
-                                  @endforeach
-                                @endisset
-                              </select>
-                            </div>
+                            <livewire:select-search :patients="$patients">
 
                             <div class="col-span-6 sm:col-span-4"> 
                               <label class="text-gray-600 font-light">Observation</label>

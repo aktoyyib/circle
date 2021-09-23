@@ -25,6 +25,7 @@ class UserExport implements FromCollection, WithHeadings, WithMapping, ShouldAut
             $user->firstname,
             $user->lastname,
             $user->email,  
+            $user->getRoleNames(),
             Carbon::parse($user->created_at)->toFormattedDateString()
         ] ;
  
@@ -38,6 +39,7 @@ class UserExport implements FromCollection, WithHeadings, WithMapping, ShouldAut
             'First Name',
             'Last Name',
             'Email',
+            'Role',
             'Date Registered'
         ];
     }

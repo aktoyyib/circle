@@ -33,15 +33,20 @@ class UsersTable extends DataTableComponent
             Column::make('E-mail', 'email')
                 ->searchable()
                 ->sortable(),
+            Column::make('Role') 
+                ->sortable(), 
             Column::make('Created On', 'created_at')
+                ->searchable()
                 ->sortable()
                 ->format(function($value) {
                     return date('F d, Y', strtotime($value));
-                }),
-            // Column::make('Role', 'role.name')
-            //     ->searchable()
-            //     ->sortable(), 
+                }), 
         ];
+    }
+
+    public function rowView(): string
+    { 
+         return 'users.roles';
     }
 }
 

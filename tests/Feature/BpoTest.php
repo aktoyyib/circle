@@ -29,5 +29,14 @@ class BpoTest extends TestCase
         
         //He should be able to read the bpo observation
         $response->assertSee($bpo->observation);
+    }
+
+    public function test_create_bpo_screen_can_be_rendered()
+    {
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->get('/bpo/create');
+
+        $response->assertStatus(200);
     } 
 }

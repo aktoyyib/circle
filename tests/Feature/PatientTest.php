@@ -29,6 +29,15 @@ class PatientTest extends TestCase
         
         //He should be able to read the patient name
         $response->assertSee($patient->name);
-    } 
+    }
+
+    public function test_create_patient_screen_can_be_rendered()
+    {
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->get('/patients/create');
+
+        $response->assertStatus(200);
+    }  
  
 }
