@@ -1,7 +1,7 @@
 ## Blood Pressure Management Application
 ---------------------------------------------------------------------------
 
-## Below are the steps to gett he application running
+## Below are the steps to get the application running
 
 ---------------------------------------------------------------------------
 
