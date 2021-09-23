@@ -36,12 +36,9 @@
                 </div>
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
                     @guest
-                        <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        @if (Route::has('register'))
-                            <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        @endif
+                        <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a> 
                     @else
-                        <span>{{ Auth::user()->name }}</span>
+                        <span>{{ Auth::user()->firstname }}</span>
 
                         <a href="{{ route('logout') }}"
                            class="no-underline hover:underline"
