@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             PermissionTableSeeder::class,
             PracticeStaffUserSeeder::class,
             PatientsSeeder::class,
+            UserSeeder::class,
         ]);
     }
 }
