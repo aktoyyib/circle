@@ -5,17 +5,19 @@
 
 ---------------------------------------------------------------------------
 
-##First clone or download this repository
+	#First clone or download this repository
 
-    git clone https://github.com/aRhez0903/Laravel-8-Livewire-CoreUI-Datatables.git
+    git clone git@github.com:aktoyyib/circle.git
 
 	After clone or download this repository, next step is install all dependency required by laravel and laravel-mix.
 
 	# install composer-dependency & npm package & build dev
-	composer install && npm install && npm run dev
+	composer update && npm install && npm run dev
+
+	#Supports Php version 7.3 >
 
 	Next Step
-	Before we start web server make sure we already generate app key, configure .env file and do migration.
+	Before you start web server make sure you already generate app key, configure .env file and setup your database.
 
 	# create copy of .env
 	cp .env.example .env
