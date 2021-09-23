@@ -27,4 +27,4 @@
 	php artisan migrate:fresh --seed
 
 	Default User
-	Login : super@admin.aktoyyib Pass : password
+	Login : tizzy@aktoyyib.com Pass : password
