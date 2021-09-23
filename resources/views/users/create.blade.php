@@ -82,7 +82,7 @@
                             </div> 
                             <div class="col-span-6 sm:col-span-4">
                               <label for="last-name" class="block text-sm font-medium text-gray-700">Role</label> 
-                              {!! Form::select('roles[]', $roles,[], array('class' => 'w-full border bg-white rounded px-3 py-2 outline-none','multiple')) !!} 
+                              {!! Form::select('roles[]', $roles,[], array('class' => 'w-full border bg-white rounded px-3 py-2 outline-none')) !!} 
                             </div>
 
                           </div>
