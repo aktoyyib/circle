@@ -62,12 +62,44 @@ class BpoTest extends TestCase
     {
         Excel::fake();
 
-        $this->actingAs($this->givenUser())
+        $this->actingAs(User::factory()->create())
              ->get('/bpo/export');
 
         Excel::assertDownloaded('bpo.xlsx', function(BpoExport $export) {
             // Assert that the correct export is downloaded.
-            return $export->collection()->contains('#2018-01');
+            return $export->collection()->contains('Patient');
+        });
+    }
+
+    /**
+    * @test
+    */
+    public function user_admin_can_download_blood_pressure_observation_export() 
+    {
+        Excel::fake();
+
+        $this->actingAs(User::factory()->create(), 'Admin')
+             ->get('/bpo/export');
+
+        Excel::assertDownloaded('bpo.xlsx', function(BpoExport $export) {
+            // Assert that the correct export is downloaded.
+            return $export->collection()->contains('Patient');
+        });
+    }
+
+    /**
+    * @test
+    */
+    public function user_doctor_can_download_blood_pressure_observation_export() 
+    {
+        Excel::fake();
+
+        $this->actingAs(User::factory()->create(), 'Doctor')
+             ->get('/bpo/export');
+
+        Excel::assertDownloaded('bpo.xlsx', function(BpoExport $export) {
+            // Assert that the correct export is downloaded.
+            return $export->collection()->contains('Patient');
         });
     }
 }

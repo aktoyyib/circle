@@ -61,7 +61,23 @@ class UserTest extends TestCase
     {
         Excel::fake();
 
-        $this->actingAs($this->givenUser())
+        $this->actingAs(User::factory()->create())
+             ->get('/users/export');
+
+        Excel::assertDownloaded('users.xlsx', function(UserExport $export) {
+            // Assert that the correct export is downloaded.
+            return $export->collection()->contains('firstname');
+        });
+    }
+
+    /**
+    * @test
+    */
+    public function user_admin_can_download_staffs_export() 
+    {
+        Excel::fake();
+
+        $this->actingAs(User::factory()->create(), 'Admin')
              ->get('/users/export');
 
         Excel::assertDownloaded('users.xlsx', function(UserExport $export) {
