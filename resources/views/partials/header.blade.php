@@ -37,8 +37,7 @@
                     <a href="{{  url('patients') }}" class="@isset($page){{ ($page == 'patient')?'bg-gray-900':'' }} @endisset text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Patients</a>
 
                     <a href="{{ url('bpo')}}" class="@isset($page){{ ($page == 'bpo')?'bg-gray-900':'' }} @endisset text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">BPO</a>
-
-                    <a href="{{ url('roles') }}" class="@isset($page){{ ($page == 'roles')?'bg-gray-900':'' }} @endisset text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Roles</a>
+ 
                   </div>
                 </div>
               </div> 
@@ -53,9 +52,7 @@
 
               <a href="{{ url('patients') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Patients</a>
 
-              <a href="{{ url('bpo') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-
-              <a href="{{ url('roles') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Roles</a>
+              <a href="{{ url('bpo') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a> 
             </div>
           </div>
         </nav>
