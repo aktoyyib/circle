@@ -2,17 +2,18 @@
 
 namespace Database\Factories;
 
+use App\Models\BloodPressureObservation;
 use App\Models\Patients;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class PatientsFactory extends Factory
+class BloodPressureObservationFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Patients::class;
+    protected $model = BloodPressureObservation::class;
 
     /**
      * Define the model's default state.
@@ -20,12 +21,12 @@ class PatientsFactory extends Factory
      * @return array
      */
     public function definition()
-    {
-        $gender = $this->faker->randomElement(['M', 'F'])[0];
+    {  
+        $observation = $this->faker->randomElement(['High', 'Low', 'Medium'])[0];
 
         return [
-            'name' => $this->faker->name(),
-            'gender' => $gender,
+            'patient_id' => Patients::factory()->create()->id,
+            'observation' => $observation,
         ];
     }
 }

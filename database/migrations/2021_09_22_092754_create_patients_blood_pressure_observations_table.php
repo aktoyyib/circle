@@ -19,7 +19,7 @@ class CreatePatientsBloodPressureObservationsTable extends Migration
             $table->string('observation'); 
             $table->foreign('patient_id')->references('id')->on('patients')
                 ->onUpdate('cascade')->onDelete('cascade'); 
-                $table->dropForeign(['patient_id']);
+                //$table->dropForeign(['patient_id']);
             $table->timestamps();
         });
     }
